@@ -1,11 +1,8 @@
-import Header from "@/components/nonreusable/Header"
+// /app/page.tsx
+"use client"
 
 const Home = () => {
-  return (
-    <>
-      <Header />
-    </>
-  )
+  return <></>
 }
 
 export default Home
