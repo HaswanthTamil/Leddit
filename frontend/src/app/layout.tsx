@@ -3,10 +3,14 @@
 import Header from "@/components/nonreusable/Header"
 import type { Metadata } from "next"
 import "@/styles/globals.css"
+import BottomNav from "@/components/nonreusable/BottomNav"
 
 export const metadata: Metadata = {
   title: "Leddit",
   description: "Reddit made Lite",
+  icons: {
+    icon: "/logo.png",
+  },
 }
 
 export default function RootLayout({
@@ -16,9 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white text-blac transition-colors duration-300">
+      <body className="bg-white flex flex-col text-blac transition-colors duration-300 min-h-screen relative">
         <Header />
         {children}
+        <BottomNav />
       </body>
     </html>
   )

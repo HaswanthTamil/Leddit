@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+import lineClamp from "@tailwindcss/line-clamp"
+
 const config = {
   darkMode: "class",
   content: [
@@ -8,9 +10,13 @@ const config = {
     "./components/**/*.{ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+    },
   },
-  plugins: [],
+  plugins: [lineClamp],
 }
 
 export default config
