@@ -2,6 +2,7 @@
 "use client"
 
 import { Search, SquarePen, User } from "lucide-react"
+import Link from "next/link"
 
 const btnClass =
   "p-2 border-2 border-transparent hover:border-red-600 hover:text-red-600 shadow-md rounded-full transition-all duration-200 ease-in-out"
@@ -14,9 +15,11 @@ const BottomNav = () => {
           <button className={btnClass}>
             <Search className="w-7 h-7" />
           </button>
-          <button className={btnClass}>
-            <SquarePen className="w-7 h-7" />
-          </button>
+          <Link href="/newpost">
+            <button className={btnClass}>
+              <SquarePen className="w-7 h-7" />
+            </button>
+          </Link>
           <button className={btnClass}>
             <User className="w-7 h-7" />
           </button>
