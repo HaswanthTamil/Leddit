@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import AddComment from "@/components/reusable/AddComment"
 import CommentCard from "@/components/reusable/CommentCard"
 import PostCard from "@/components/reusable/PostCard"
+import { useParams } from "next/navigation"
 
 type Comment = {
   id: number
@@ -20,19 +21,19 @@ type Post = {
   comments: Comment[]
 }
 
-const PostPage = ({ params }: { params: { id: string } }) => {
+const PostPage = () => {
+  const params = useParams()
+  const id = params.id as string
   const [post, setPost] = useState<Post | null>(null)
 
   useEffect(() => {
     const fetchPost = async () => {
-      const res = await fetch(
-        `https://leddit.onrender.com/app/posts/${params.id}/`
-      )
+      const res = await fetch(`https://leddit.onrender.com/app/posts/${id}/`)
       const data = await res.json()
       setPost(data)
     }
     fetchPost()
-  }, [params.id])
+  }, [id])
 
   if (!post) return <div>Loading...</div>
 
