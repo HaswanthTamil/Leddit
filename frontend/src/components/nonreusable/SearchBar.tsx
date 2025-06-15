@@ -13,7 +13,7 @@ const SearchBar = () => {
 
   return (
     <>
-      <div className="flex flex-row items-center rounded-full w-[70vw] bg-white shadow-md p-2 my-2 mx-auto h-10">
+      <div className="flex flex-row items-center rounded-full w-[70vw] md:w-[50vw] bg-white shadow-md p-2 my-2 mx-auto h-10">
         <Search size={20} />
         <input
           ref={inputRef}

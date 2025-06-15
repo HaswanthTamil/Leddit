@@ -4,6 +4,7 @@ import Header from "@/components/nonreusable/Header"
 import type { Metadata } from "next"
 import "@/styles/globals.css"
 import LayoutWrapper from "@/components/nonreusable/LayoutWrapper"
+import { ClerkProvider } from "@clerk/nextjs"
 
 export const metadata: Metadata = {
   title: "Leddit",
@@ -19,11 +20,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-white flex flex-col text-blac transition-colors duration-300 min-h-screen relative">
-        <Header />
-        <LayoutWrapper>{children}</LayoutWrapper>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className="bg-white flex flex-col text-blac transition-colors duration-300 min-h-screen relative">
+          <header>
+            <Header />
+          </header>
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

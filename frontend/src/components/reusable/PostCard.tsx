@@ -5,11 +5,19 @@ import Link from "next/link"
 import PostFooter from "./PostFooter"
 import PostHeader from "./PostHeader"
 
-const PostCard = ({ lineClampCount }: { lineClampCount: string }) => {
+const PostCard = ({
+  lineClampCount,
+  widthProp,
+}: {
+  lineClampCount: string
+  widthProp: string
+}) => {
   return (
     <>
       <Link href="/post" className="cursor-default">
-        <div className="flex flex-col items-center bg-white border border-gray-200 shadow-md rounded-lg p-4 mt-1 w-full md:w-md">
+        <div
+          className={`flex flex-col items-center bg-white border border-gray-200 shadow-md rounded-lg p-4 mt-1 ${widthProp}`}
+        >
           <PostHeader />
           <div className="w-full py-2 max-h-[300px] overflow-hidden">
             <h1 className="font-bold text-xl">Post Title</h1>
