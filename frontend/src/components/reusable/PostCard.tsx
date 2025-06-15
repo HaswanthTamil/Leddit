@@ -8,7 +8,7 @@ import PostHeader from "./PostHeader"
 const PostCard = ({ lineClampCount }: { lineClampCount: string }) => {
   return (
     <>
-      <Link href="/post">
+      <Link href="/post" className="cursor-default">
         <div className="flex flex-col items-center bg-white border border-gray-200 shadow-md rounded-lg p-4 mt-1 w-full md:w-md">
           <PostHeader />
           <div className="w-full py-2 max-h-[300px] overflow-hidden">

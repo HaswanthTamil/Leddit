@@ -3,7 +3,7 @@
 import Header from "@/components/nonreusable/Header"
 import type { Metadata } from "next"
 import "@/styles/globals.css"
-import BottomNav from "@/components/nonreusable/BottomNav"
+import LayoutWrapper from "@/components/nonreusable/LayoutWrapper"
 
 export const metadata: Metadata = {
   title: "Leddit",
@@ -22,8 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="bg-white flex flex-col text-blac transition-colors duration-300 min-h-screen relative">
         <Header />
-        {children}
-        <BottomNav />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   )
