@@ -25,9 +25,6 @@ media/
 # macOS
 .DS_Store
 
-# Migrations (optional: comment this if you want to keep tracked)
-**/migrations/
-!**/migrations/__init__.py
 
 # Bytecode
 *.so
